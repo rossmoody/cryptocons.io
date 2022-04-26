@@ -1,0 +1,3 @@
+[submodule "cryptocons"]
+	path = cryptocons
+	url = https://github.com/rossmoody/cryptocons.git
