@@ -1,7 +1,7 @@
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
-const ThemeButton = () => {
+const ThemeToggle = () => {
     const [mounted, setMounted] = useState(false)
     const { theme, resolvedTheme, setTheme } = useTheme()
 
@@ -63,4 +63,4 @@ const DarkThemeIcon = () => (
     </svg>
 )
 
-export default ThemeButton
+export default ThemeToggle

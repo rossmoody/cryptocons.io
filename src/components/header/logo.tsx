@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import LogoIcon from './logo-icon'
+import LogoIcon from './LogoIcon'
 
 const Logo = () => (
     <div className="flex gap-3 items-center">

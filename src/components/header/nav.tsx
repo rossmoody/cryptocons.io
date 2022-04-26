@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { NavItems } from '.'
 import classNames from '../../utils/classnames'
-import ThemeButton from './theme-button'
+import ThemeToggle from './ThemeToggle'
 
 const Nav = ({ data }: NavItems) => {
     const { pathname } = useRouter()
@@ -37,7 +37,7 @@ const Nav = ({ data }: NavItems) => {
                 })}
             </div>
             <div className="lg:block h-4 border-r-2 brdr" />
-            <ThemeButton />
+            <ThemeToggle />
         </div>
     )
 }
