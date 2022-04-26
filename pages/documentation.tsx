@@ -1,7 +1,7 @@
-import DocumentationLayout from '@layout/Documentation'
+import DocumentationLayout from '../src/layout/Documentation'
 
 const Index = () => {
-  return <DocumentationLayout />
+    return <DocumentationLayout />
 }
 
 export default Index
