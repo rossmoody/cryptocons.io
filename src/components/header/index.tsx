@@ -1,7 +1,7 @@
 import { CodeIcon, LibraryIcon } from '@heroicons/react/outline'
 import Figma from '../Icons/Figma'
 import GitHub from '../Icons/Github'
-import Logo from './logo'
+import Logo from './Logo'
 import MobileNav from './MobileNav'
 import Nav from './Nav'
 
@@ -30,7 +30,7 @@ const navItems: NavItem[] = [
     },
     {
         name: 'Figma',
-        href: '/figma',
+        href: 'https://www.figma.com/community/file/1100964857221715143/Cryptocurrency-Logos-and-Icons',
         description: 'Figma assets and component resources',
         ariaLabel: 'Navigate to Figma documentation',
         icon: Figma,
@@ -50,7 +50,7 @@ export type NavItems = {
 }
 
 const Header = () => (
-    <header className="flex justify-between h-14 items-center px-5 border-b brdr">
+    <header className="flex justify-between h-14 items-center px-8 border-b brdr">
         <Logo />
         <Nav data={navItems} />
         <MobileNav data={navItems} />

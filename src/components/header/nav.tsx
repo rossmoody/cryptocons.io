@@ -13,6 +13,7 @@ const Nav = ({ data }: NavItems) => {
                 {data.map((item) => {
                     const navIcon =
                         item.name === 'GitHub' || item.name === 'Figma'
+
                     const isExternal = item.href.includes('http')
                         ? '_blank'
                         : ''

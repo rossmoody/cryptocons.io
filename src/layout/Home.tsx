@@ -1,9 +1,17 @@
+// import DetailsPanel from '../components/DetailsPanel'
 import FilterPanel from '../components/FilterPanel'
+import GalleryBar from '../components/GalleryBar'
+import IconGallery from '../components/IconGallery'
 
 const HomeLayout = () => (
-    <main className="h-full ">
+    <div className="h-full flex">
         <FilterPanel />
-    </main>
+        <main className="flex flex-1 flex-col pb-16">
+            <GalleryBar />
+            <IconGallery />
+        </main>
+        {/* <DetailsPanel /> */}
+    </div>
 )
 
 export default HomeLayout

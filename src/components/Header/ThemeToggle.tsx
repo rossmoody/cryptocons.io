@@ -10,7 +10,7 @@ const ThemeToggle = () => {
     return (
         <button
             type="button"
-            aria-label="Toggle Dark Mode"
+            aria-label="Toggle color mode"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             className="w-7 h-7 text-slate-700 dark:text-slate-300 dark:hover:bg-slate-800 hover:bg-slate-100 rounded-md items-center flex justify-center"
         >
@@ -26,8 +26,8 @@ const ThemeToggle = () => {
 const LightThemeIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="16"
+        height="16"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -50,8 +50,8 @@ const LightThemeIcon = () => (
 const DarkThemeIcon = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
+        width="16"
+        height="16"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
