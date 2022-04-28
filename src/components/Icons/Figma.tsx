@@ -1,4 +1,6 @@
-const Figma = (props: React.SVGProps<SVGSVGElement>) => (
+import React from 'react'
+
+export const Figma = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -27,5 +29,3 @@ const Figma = (props: React.SVGProps<SVGSVGElement>) => (
         />
     </svg>
 )
-
-export default Figma

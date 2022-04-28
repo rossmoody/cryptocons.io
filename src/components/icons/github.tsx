@@ -1,4 +1,6 @@
-const GitHub = (props: React.SVGProps<SVGSVGElement>) => (
+import React from 'react'
+
+export const GitHub = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -13,5 +15,3 @@ const GitHub = (props: React.SVGProps<SVGSVGElement>) => (
         />
     </svg>
 )
-
-export default GitHub
