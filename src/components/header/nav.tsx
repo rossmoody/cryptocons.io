@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import type { NavItems } from '.'
+import { NavItem } from '../../types'
 import classNames from '../../utils/classnames'
 import ThemeToggle from './ThemeToggle'
 
-const Nav = ({ data }: NavItems) => {
+type Props = {
+    data: NavItem[]
+}
+const Nav = ({ data }: Props) => {
     const { pathname } = useRouter()
 
     return (

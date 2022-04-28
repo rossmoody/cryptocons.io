@@ -1,7 +1,4 @@
-interface IconProps extends React.SVGAttributes<SVGElement> {
-    size?: string | number
-    badgeRadius?: number
-}
+import { IconProps } from '../cryptocons/src/Icon'
 
 export type Children = {
     children: React.ReactNode
