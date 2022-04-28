@@ -5,7 +5,7 @@ import Logo from './Logo'
 import MobileNav from './MobileNav'
 import Nav from './Nav'
 
-type NavItem = {
+export type NavItem = {
     name: string
     href: string
     ariaLabel: string
@@ -44,10 +44,6 @@ const navItems: NavItem[] = [
         icon: GitHub,
     },
 ]
-
-export type NavItems = {
-    data: NavItem[]
-}
 
 const Header = () => (
     <header className="flex justify-between h-14 items-center px-8 border-b brdr">

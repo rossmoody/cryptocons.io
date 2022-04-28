@@ -9,13 +9,12 @@ const IconGallery = () => {
     const { iconType } = useIconType()
 
     React.useEffect(() => {
-        const tuples = Object.entries(iconModules)
-        const filtered = tuples.filter(([displayName]) => {
+        const filtered = Object.entries(iconModules).filter(([displayName]) => {
             switch (iconType) {
                 case 'badge':
                     return displayName.includes('Badge')
 
-                default:
+                case 'logo':
                     return !displayName.includes('Badge')
             }
         })
@@ -23,8 +22,8 @@ const IconGallery = () => {
     }, [setIcons, iconType])
 
     return (
-        <div className="h-full flex-1 p-6 overflow-y-scroll">
-            <div className="flex flex-wrap gap-3 ">
+        <div className="h-full flex-1 p-4 overflow-y-scroll">
+            <div className="flex flex-wrap gap-3">
                 {icons.map(([displayName, Icon]) => (
                     <IconItem key={displayName} name={displayName}>
                         <Icon size={48} />

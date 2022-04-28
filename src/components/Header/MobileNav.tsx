@@ -2,9 +2,13 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, SunIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
 import { Fragment, useEffect, useState } from 'react'
-import type { NavItems } from '.'
+import { NavItem } from '.'
 
-const MobileNav = ({ data }: NavItems) => {
+type Props = {
+    data: NavItem[]
+}
+
+const MobileNav = ({ data }: Props) => {
     const [mounted, setMounted] = useState(false)
     const { theme, setTheme } = useTheme()
 
