@@ -12,3 +12,11 @@ export type IconModule = [
         IconProps & React.RefAttributes<SVGSVGElement>
     >
 ]
+
+export type NavItem = {
+    name: string
+    href: string
+    ariaLabel: string
+    description?: string
+    icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element
+}

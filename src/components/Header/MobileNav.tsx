@@ -2,7 +2,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, SunIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
 import { Fragment, useEffect, useState } from 'react'
-import { NavItem } from './index'
+import { NavItem } from '../../types'
 
 type Props = {
     data: NavItem[]

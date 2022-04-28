@@ -1,17 +1,10 @@
 import { CodeIcon, LibraryIcon } from '@heroicons/react/outline'
+import { NavItem } from '../../types'
 import Figma from '../Icons/Figma'
 import GitHub from '../Icons/Github'
 import Logo from './Logo'
 import MobileNav from './MobileNav'
 import Nav from './Nav'
-
-export type NavItem = {
-    name: string
-    href: string
-    ariaLabel: string
-    description?: string
-    icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element
-}
 
 const navItems: NavItem[] = [
     {
