@@ -1,13 +1,14 @@
 import { RadioGroup } from '@headlessui/react'
-import { useState } from 'react'
+import { useIconType } from '../../providers/IconTypeProvider'
+import { IconType } from '../../types'
 
 const ShapeToggle = () => {
-    const [shape, setShape] = useState('logo')
+    const { iconType, setIconType } = useIconType()
 
     return (
         <RadioGroup
-            value={shape}
-            onChange={setShape}
+            value={iconType}
+            onChange={setIconType}
             className="flex text-sm bg-slate-100 h-8 rounded-md"
         >
             <RadioGroup.Label className="hidden">Type</RadioGroup.Label>
@@ -18,12 +19,12 @@ const ShapeToggle = () => {
 }
 
 type RadioItemProps = {
-    value: string
+    value: IconType
     label: string
 }
 
 const RadioItem = ({ value, label }: RadioItemProps) => (
-    <RadioGroup.Option value={value} className="h-8 p-1">
+    <RadioGroup.Option value={value} className="h-8">
         {({ checked }) => (
             <span
                 className={`${
