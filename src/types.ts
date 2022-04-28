@@ -1,3 +1,8 @@
+interface IconProps extends React.SVGAttributes<SVGElement> {
+    size?: string | number
+    badgeRadius?: number
+}
+
 export type Children = {
     children: React.ReactNode
 }
@@ -6,7 +11,9 @@ export type IconType = 'logo' | 'badge'
 
 export type IconModule = [
     string,
-    React.ForwardRefExoticComponent<React.RefAttributes<SVGSVGElement>>
+    React.ForwardRefExoticComponent<
+        IconProps & React.RefAttributes<SVGSVGElement>
+    >
 ]
 
 export type NavItem = {

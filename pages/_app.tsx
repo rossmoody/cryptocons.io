@@ -7,14 +7,14 @@ import '../src/styles/global.css'
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <IconTypeProvider>
-            <IconsProvider>
-                <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class">
+            <IconTypeProvider>
+                <IconsProvider>
                     <Layout>
                         <Component {...pageProps} />
                     </Layout>
-                </ThemeProvider>
-            </IconsProvider>
-        </IconTypeProvider>
+                </IconsProvider>
+            </IconTypeProvider>
+        </ThemeProvider>
     )
 }
