@@ -1,11 +1,11 @@
 import React from 'react'
 
-export const GitHub = (props: React.SVGProps<SVGSVGElement>) => (
+export const GitHub = () => (
     <svg
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        {...props}
+        className="h-5 w-5"
     >
         <path
             fillRule="evenodd"

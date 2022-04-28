@@ -33,7 +33,7 @@ const Nav = ({ data }: Props) => {
                                     'text-sm inline-flex gap-1 items-center hover:text-indigo-500 dark:hover:text-indigo-400 h-full'
                                 )}
                             >
-                                {navIcon && <item.icon className="h-5 w-5" />}
+                                {navIcon && <item.icon />}
                                 {item.name}
                             </a>
                         </Link>
