@@ -9,7 +9,7 @@ const ShapeToggle = () => {
         <RadioGroup
             value={iconType}
             onChange={setIconType}
-            className="flex text-sm bg-slate-100 h-8 rounded-md"
+            className="flex text-sm bg-slate-100 h-8 rounded-md dark:bg-slate-800"
         >
             <RadioGroup.Label className="hidden">Type</RadioGroup.Label>
             <RadioItem value="logo" label="Logo" />

@@ -1,4 +1,8 @@
+import { useIcons } from '../../providers/IconsProvider'
+
 const FilterInput = () => {
+    const { icons } = useIcons()
+
     return (
         <div className="relative flex-1">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -22,7 +26,7 @@ const FilterInput = () => {
             <input
                 type="text"
                 className="h-8 bg-slate-100 dark:bg-slate-800 w-full pl-9 pr-4 text-gray-700 rounded-md dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring text-sm"
-                placeholder="Filter by tag or keyword"
+                placeholder={`Filter ${icons.length} by tag or keyword`}
                 id="filter-input"
             />
         </div>
