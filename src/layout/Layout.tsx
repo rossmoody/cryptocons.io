@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import Header from '../components/Head'
+import Header from '../components/Header'
 
 type Children = {
     children: ReactNode
