@@ -16,7 +16,7 @@ const navItems: NavItem[] = [
     },
     {
         name: 'How to use',
-        href: '/documentation',
+        href: '/how-to-use',
         description: 'Learn how to use the Cryptocon components',
         ariaLabel: 'Navigate to documentation',
         icon: CodeIcon,

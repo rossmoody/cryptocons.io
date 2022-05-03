@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
-import { Layout } from '../src/layout/Layout'
+import Layout from '../src/layout/Layout'
 import { IconsProvider } from '../src/providers/IconsProvider'
 import { IconTypeProvider } from '../src/providers/IconTypeProvider'
 import '../src/styles/global.css'
