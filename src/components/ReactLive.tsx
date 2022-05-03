@@ -1,7 +1,13 @@
 import { Language } from 'prism-react-renderer'
 import dracula from 'prism-react-renderer/themes/dracula'
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live'
-import { Binance, BinanceBadge } from '../../cryptocons/src'
+import {
+    Binance,
+    BinanceBadge,
+    Cryptocon,
+    CryptoconBadge,
+    CryptoconLogo,
+} from '../../cryptocons/src'
 
 type Props = {
     code: string
@@ -12,6 +18,9 @@ type Props = {
 const scope = {
     Binance,
     BinanceBadge,
+    Cryptocon,
+    CryptoconBadge,
+    CryptoconLogo,
 }
 
 const ReactLive = ({ code, preview = true, language = 'jsx' }: Props) => (

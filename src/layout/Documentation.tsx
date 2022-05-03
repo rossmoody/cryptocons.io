@@ -6,7 +6,7 @@ type Children = {
 
 const Documentation = ({ children }: Children) => (
     <main className="h-full w-full overflow-y-scroll py-16">
-        <article className="prose lg:prose-lg xl:prose-xl dark:prose-invert mx-auto">
+        <article className="prose lg:prose-lg dark:prose-invert mx-auto">
             {children}
         </article>
     </main>
