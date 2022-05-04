@@ -1,0 +1,188 @@
+# Cryptocons
+
+Cryptocons is a collection of named icon modules and utility functions making it easier to manage cryptocurreny icons in your React project. Each icon is placed on a 24x24 grid and available as two types:
+
+1. **Logo:** Plain logomark icons
+1. **Badge:** Logomark icons contained in a shape that can be configured
+   with different border radiuses from square to circle.
+
+```react-live
+<Binance /> {/** Logo **/}
+<BinanceBadge /> {/** Badge **/}
+```
+
+## Installation
+
+To install the package in your project run:
+
+```bash
+yarn add cryptocons
+
+# or
+
+npm i cryptocons
+```
+
+## Usage
+
+### Basic usage
+
+Once the package is installed, importing and using icons is a pretty simple process. Import individual icon modules as named exports.
+
+```bash
+import { Binance, Coinbase } from 'cryptocons
+```
+
+Each icon is wrapped in a `forwardRef` that exposes the underlying SVG element. Any valid SVG property can be added to an icon.
+
+```react-live
+<Binance />
+<Binance height="48px" width="48px" />
+<Binance id="binance-id" />
+```
+
+### Changing icon size
+
+Aside from regular SVG properties, each icon has a limited set of component properties. One of them is `size`. The size property is equivalent to setting the height and width of the SVG. The following examples are all fuctionally the same.
+
+```react-live
+<BinanceBadge size={64} />
+<BinanceBadge height={64} width={64} />
+<BinanceBadge size="64" />
+<BinanceBadge height="64" width="64" />
+<BinanceBadge size="64px" />
+<BinanceBadge height="64px" width="64px" />
+```
+
+### Changing badge radius
+
+Another component property exclusive to Badge icon types is `badgeRadius`.
+
+Setting a `badgeRadius` will round the corners from a square to a circle depending on the number. Setting a badgeRadius on an icon that isn&apos;t a Badge will have no effect. The default radius is 8.
+
+```react-live
+<Binance size={64} badgeRadius={12} /> {/** No effect **/}
+<BinanceBadge size={64} badgeRadius={4} />
+<BinanceBadge size={64} badgeRadius={1} />
+<BinanceBadge size={64} badgeRadius={100} />
+<BinanceBadge size={64} />
+```
+
+### Higher order components
+
+There are three available higher order components that bundle available
+icons into a single component and use intellisense to autocomplete available
+icons by name.
+
+#### Cryptocon
+
+All available icons can be referenced with the `icon` property.
+
+```react-live
+<Cryptocon icon="Binance" />
+<Cryptocon icon="CardanoBadge" />
+<Cryptocon icon="BitcoinBadge" />
+```
+
+#### CryptoconBadge
+
+All available <i>Badge</i> icons can be referenced with the `icon` property.
+
+```react-live
+<CryptoconBadge icon="CardanoBadge" />
+<CryptoconBadge icon="BitcoinBadge" />
+```
+
+#### CryptoconLogo
+
+All available <i>Logo</i> icons can be referenced with the `icon` property.
+
+```react-live
+<CryptoconLogo icon="Cardano" />
+<CryptoconLogo icon="Bitcoin" />
+```
+
+---
+
+## Creating custom cryptocons
+
+There are two methods for creating your own cryptocons.
+
+### The Icon component
+
+The Icon component renders an SVG element to create custom cryptocons on the fly. The Icon component will need supplied a `viewBox`.
+
+```jsx
+import { Icon } from 'cryptocons'
+
+const ExampleIcon = () => (
+    <Icon viewBox="0 0 24 24">
+        <path d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0" />
+    </Icon>
+)
+```
+
+### The createIcon convenience function
+
+The `createIcon` function is a convenience wrapper allowing you to achieve the same result with less effort. The default `viewBox` is `0 0 24 24` when using the `createIcon` function.
+
+```jsx
+import { createIcon } from 'cryptocons'
+
+const ExampleIcon = createIcon({
+    path: (
+        <path d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0" />
+    ),
+})
+```
+
+### Accessibility
+
+Implementing icons accessibly can be tricky but it's important. Especially if you plan on putting 400+ cryptocurrency icons on a page. Paraphrasing from [CSS Tricks on accessible SVG implementation](https://css-tricks.com/accessible-svgs/) and [other references](https://css-tricks.com/accessible-svg-icons/), an icon can be implemented in 2 main ways.
+
+#### 1. Decorative
+
+Cryptocon icons assume decorative intent. What this means is icons have `aria-hidden="true"` and `focusable="false"` set by default. It's favorable to let assistive technology instead of the icon recognize parent elements. SVG elements with an `aria-label` are more verbose because they are announced as a group, so it's favorable to go with `aria-label` on the primary interactive parent element.
+
+```jsx
+<button onClick={navigateHome}>
+    <BinanceBadge />
+    Navigate home
+</button>
+```
+
+```jsx
+<button aria-label="Do Binance action">
+    <BinanceBadge />
+</button>
+```
+
+When icons are wrapped by an interactive element, what’s important is that the link has informative text. Therefore, if a component can be described by visible text, it is recommended to reference that text with an `aria-label` attribute rather than using the `title` property.
+
+```jsx
+<a href="/" aria-label="Navigate home">
+    <Coinbase />
+</a>
+```
+
+```jsx
+<a href="/">
+    Navigate home
+    <Coinbase />
+</a>
+```
+
+#### 2. Standalone
+
+> This implementation is discouraged. It's best to use an IconButton instead as it contains accessible interaction states. But if you're gonna do it, do it in the following way.
+
+Suppose the icon is being used as a standalone interactive element and isn't accompanied by a visible text label. In that case, it's best to use a combination of `role`, `aria-label`, and ensuring the icon can be discovered by assistive technology by setting `aria-hidden` to `false`.
+
+```jsx
+<Home
+    onClick={navigateHome}
+    role="img"
+    aria-label="Navigate home"
+    aria-hidden={false}
+/>
+```
