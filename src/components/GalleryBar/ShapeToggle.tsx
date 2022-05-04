@@ -12,6 +12,7 @@ const ShapeToggle = () => {
             className="flex text-sm bg-slate-100 h-8 rounded-md dark:bg-slate-800"
         >
             <RadioGroup.Label className="hidden">Type</RadioGroup.Label>
+            <RadioItem value="all" label="All" />
             <RadioItem value="logo" label="Logo" />
             <RadioItem value="badge" label="Badge" />
         </RadioGroup>

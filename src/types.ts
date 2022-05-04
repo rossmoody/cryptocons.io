@@ -4,7 +4,7 @@ export type Children = {
     children: React.ReactNode
 }
 
-export type IconType = 'logo' | 'badge'
+export type IconType = 'all' | 'logo' | 'badge'
 
 export type IconModule = [
     string,

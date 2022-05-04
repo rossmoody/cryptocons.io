@@ -11,6 +11,9 @@ const IconGallery = () => {
     React.useEffect(() => {
         const filtered = Object.entries(iconModules).filter(([displayName]) => {
             switch (iconType) {
+                case 'all':
+                    return true
+
                 case 'badge':
                     return displayName.includes('Badge')
 
