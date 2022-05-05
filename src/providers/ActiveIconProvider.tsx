@@ -13,7 +13,7 @@ export const ActiveIconProvider = ({ children }: Children) => {
     const [activeIcon, setActiveIcon] =
         React.useState<CryptoconNames>('Binance')
 
-    const checkedMemo = React.useMemo(
+    const memo = React.useMemo(
         () => ({
             activeIcon,
             setActiveIcon,
@@ -22,7 +22,7 @@ export const ActiveIconProvider = ({ children }: Children) => {
     )
 
     return (
-        <ActiveIconContext.Provider value={checkedMemo}>
+        <ActiveIconContext.Provider value={memo}>
             {children}
         </ActiveIconContext.Provider>
     )

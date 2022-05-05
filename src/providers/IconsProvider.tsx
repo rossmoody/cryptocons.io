@@ -11,7 +11,7 @@ const IconsContext = React.createContext({} as IconsContextProps)
 export const IconsProvider = ({ children }: Children) => {
     const [icons, setIcons] = React.useState<IconModule[]>([])
 
-    const checkedMemo = React.useMemo(
+    const memo = React.useMemo(
         () => ({
             icons,
             setIcons,
@@ -20,9 +20,7 @@ export const IconsProvider = ({ children }: Children) => {
     )
 
     return (
-        <IconsContext.Provider value={checkedMemo}>
-            {children}
-        </IconsContext.Provider>
+        <IconsContext.Provider value={memo}>{children}</IconsContext.Provider>
     )
 }
 

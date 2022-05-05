@@ -1,7 +1,14 @@
+import React, { ChangeEvent } from 'react'
+import { useIconFilter } from '../../providers/IconFilterProvider'
 import { useIcons } from '../../providers/IconsProvider'
 
 const FilterInput = () => {
     const { icons } = useIcons()
+    const { setIconFilter } = useIconFilter()
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setIconFilter(event.target.value)
+    }
 
     return (
         <div className="relative flex-1">
@@ -25,6 +32,7 @@ const FilterInput = () => {
             </label>
             <input
                 type="text"
+                onChange={handleChange}
                 className="h-8 bg-slate-100 dark:bg-slate-800 w-full pl-9 pr-4 text-gray-700 rounded-md dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring text-sm"
                 placeholder={`Filter ${icons.length} icons by tag or keyword`}
                 id="filter-input"

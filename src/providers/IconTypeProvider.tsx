@@ -11,7 +11,7 @@ const IconTypeContext = React.createContext({} as IconTypeContextProps)
 export const IconTypeProvider = ({ children }: Children) => {
     const [iconType, setIconType] = React.useState<IconType>('all')
 
-    const checkedMemo = React.useMemo(
+    const memo = React.useMemo(
         () => ({
             iconType,
             setIconType,
@@ -20,7 +20,7 @@ export const IconTypeProvider = ({ children }: Children) => {
     )
 
     return (
-        <IconTypeContext.Provider value={checkedMemo}>
+        <IconTypeContext.Provider value={memo}>
             {children}
         </IconTypeContext.Provider>
     )
