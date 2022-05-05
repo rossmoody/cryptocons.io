@@ -26,7 +26,7 @@ const FilterInput = () => {
             <input
                 type="text"
                 className="h-8 bg-slate-100 dark:bg-slate-800 w-full pl-9 pr-4 text-gray-700 rounded-md dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-500 focus:outline-none focus:ring text-sm"
-                placeholder={`Filter ${icons.length} by tag or keyword`}
+                placeholder={`Filter ${icons.length} icons by tag or keyword`}
                 id="filter-input"
             />
         </div>

@@ -30,7 +30,7 @@ const RadioItem = ({ value, label }: RadioItemProps) => (
             <span
                 className={`${
                     checked ? 'bg-indigo-500 text-white' : ''
-                } rounded-md px-2 cursor-pointer h-full flex items-center`}
+                } rounded-md px-4 cursor-pointer h-full flex items-center`}
             >
                 {label}
             </span>

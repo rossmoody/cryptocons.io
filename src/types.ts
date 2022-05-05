@@ -1,3 +1,4 @@
+import { CryptoconNames } from '../cryptocons/src'
 import { IconProps } from '../cryptocons/src/Icon'
 
 export type Children = {
@@ -7,7 +8,7 @@ export type Children = {
 export type IconType = 'all' | 'logo' | 'badge'
 
 export type IconModule = [
-    string,
+    CryptoconNames,
     React.ForwardRefExoticComponent<
         IconProps & React.RefAttributes<SVGSVGElement>
     >
