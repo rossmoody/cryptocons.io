@@ -41,7 +41,7 @@ const IconGallery = () => {
 
     return (
         <div className="h-full flex-1 p-4 overflow-y-scroll">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 pb-16">
                 {icons.map(([displayName, Icon]) => (
                     <IconItem key={displayName} name={displayName}>
                         <Icon size={48} />

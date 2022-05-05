@@ -4,7 +4,7 @@ import IconGallery from '../components/IconGallery'
 
 const HomeLayout = () => (
     <div className="h-full flex relative">
-        <main className="flex flex-1 flex-col pb-16">
+        <main className="flex flex-1 flex-col">
             <GalleryBar />
             <IconGallery />
         </main>

@@ -5,7 +5,7 @@ export default class Document extends NextDocument {
     render() {
         return (
             <Html lang="en">
-                <Head>
+                <Head title="Cryptocons">
                     <link
                         rel="stylesheet"
                         href="https://rsms.me/inter/inter.css"

@@ -9,19 +9,18 @@ const DetailsPanel = () => {
     const { activeIcon } = useActiveIcon()
 
     const code = () => {
-        const svg = renderToString(<Cryptocon icon={activeIcon} />)
-        return format(svg, { parser: 'babel', plugins: [babel] }).replace(
-            ';',
-            ''
-        )
+        return format(renderToString(<Cryptocon icon={activeIcon} />), {
+            parser: 'babel',
+            plugins: [babel],
+        }).replace(';', '')
     }
 
     return (
-        <aside className="w-96 border-l brdr h-full z-10 absolute md:flex md:relative drop-shadow-md md:drop-shadow-none -right-96 md:right-0 transition-all ease-in-out flex-col">
-            <header className="h-16 px-5 border-b brdr items-center flex">
+        <aside className="w-96 border-l brdr z-10 -right-96 md:right-0 transition-all ease-in-out dark:bg-slate-900 bg-white flex flex-col absolute md:flex md:relative drop-shadow-md md:drop-shadow-none">
+            <header className="basis-16 px-5 border-b brdr items-center flex shrink-0">
                 <h2 className="text-xl font-semibold">{activeIcon}</h2>
             </header>
-            <section className="border-b brdr flex items-center justify-center h-52">
+            <section className="border-b brdr flex items-center justify-center basis-52 shrink-0">
                 <Cryptocon icon={activeIcon} size={100} />
             </section>
             <CodeRender>{code()}</CodeRender>
