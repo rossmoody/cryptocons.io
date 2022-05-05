@@ -32,7 +32,9 @@ const IconGallery = () => {
                         return !displayName.includes('Badge')
                 }
             })
-            .filter(([displayName]) => displayName.includes(iconFilter))
+            .filter(([displayName]) =>
+                displayName.toLowerCase().includes(iconFilter)
+            )
 
         setIcons(filtered)
     }, [setIcons, iconType, iconFilter])
