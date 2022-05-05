@@ -7,13 +7,11 @@ Cryptocons is a collection of named icon modules and utility functions making it
    with different border radiuses from square to circle.
 
 ```react-live
-<Binance /> {/** Logo **/}
-<BinanceBadge /> {/** Badge **/}
+<Binance size={100}/>
+<BinanceBadge size={100} />
 ```
 
 ## Installation
-
-To install the package in your project run:
 
 ```bash
 yarn add cryptocons
@@ -68,13 +66,13 @@ Setting a `badgeRadius` will round the corners from a square to a circle dependi
 <BinanceBadge size={64} />
 ```
 
-### Higher order components
+## Cryptocon Components
 
 There are three available higher order components that bundle available
 icons into a single component and use intellisense to autocomplete available
 icons by name.
 
-#### Cryptocon
+### Cryptocon
 
 All available icons can be referenced with the `icon` property.
 
@@ -84,7 +82,7 @@ All available icons can be referenced with the `icon` property.
 <Cryptocon icon="BitcoinBadge" />
 ```
 
-#### CryptoconBadge
+### CryptoconBadge
 
 All available <i>Badge</i> icons can be referenced with the `icon` property.
 
@@ -93,7 +91,7 @@ All available <i>Badge</i> icons can be referenced with the `icon` property.
 <CryptoconBadge icon="BitcoinBadge" />
 ```
 
-#### CryptoconLogo
+### CryptoconLogo
 
 All available <i>Logo</i> icons can be referenced with the `icon` property.
 
