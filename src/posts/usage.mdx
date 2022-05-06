@@ -15,8 +15,6 @@ Cryptocons is a collection of named icon modules and utility functions making it
 
 ## Installation
 
-Cryptocons is written in Typescript and comes typed.
-
 ```bash
 yarn add cryptocons
 
@@ -27,17 +25,27 @@ npm i cryptocons
 
 ---
 
-## Usage
+## Import
 
-### Basic usage
+Once the package is installed, importing and using icons is pretty simple. They are available as CommonJs or ES modules.
 
-Once the package is installed, importing and using icons is pretty simple.
+### CommonJS
+
+```bash
+const {Binacne, Coinbase} = require('cryptocons')
+```
+
+### ES Module
 
 ```bash
 import { Binance, Coinbase } from 'cryptocons
 ```
 
-Each icon is wrapped in a `forwardRef` that exposes the underlying SVG element. Any valid SVG property can be added.
+## Usage
+
+### Basic usage
+
+Each icon is wrapped in a `forwardRef` that exposes the underlying SVG element as a ref. Any valid SVG properties can be added to a cryptocon.
 
 ```react-live
 <Binance />
@@ -90,7 +98,7 @@ cryptocons into a single component and that can be rendered using the `icon` pro
 
 ### CryptoconBadge
 
-**Badge** icons can be rendered with the `icon` property.
+Only **Badge** icons will be autocompleted with intellisense or available to render with the `icon` property.
 
 ```react-live
 <CryptoconBadge icon="CardanoBadge" />
@@ -100,7 +108,7 @@ cryptocons into a single component and that can be rendered using the `icon` pro
 
 ### CryptoconLogo
 
-**Logo** icons can be rendered with the `icon` property.
+Only **Logo** icons will be autocompleted with intellisense or available to render with the `icon` property.
 
 ```react-live
 <CryptoconLogo icon="Cardano" />
@@ -183,8 +191,6 @@ When icons are wrapped by an interactive element, what’s important is that the
 ```
 
 #### 2. Standalone
-
-> This implementation is discouraged. It's best to use an IconButton instead as it contains accessible interaction states. But if you're gonna do it, do it in the following way.
 
 Suppose the icon is being used as a standalone interactive element and isn't accompanied by a visible text label. In that case, it's best to use a combination of `role`, `aria-label`, and ensuring the icon can be discovered by assistive technology by setting `aria-hidden` to `false`.
 
