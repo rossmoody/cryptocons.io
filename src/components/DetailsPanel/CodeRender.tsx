@@ -15,6 +15,7 @@ const CodeRender = (props: Props) => (
             margin: 0,
             borderRadius: 0,
             padding: '24px 24px 100px',
+            height: '100%',
         }}
     >
         {props.children}
