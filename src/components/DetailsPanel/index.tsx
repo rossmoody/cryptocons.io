@@ -10,7 +10,7 @@ const DetailsPanel = () => {
             <header className="basis-16 px-5 border-b brdr items-center flex shrink-0">
                 <h2 className="text-xl font-semibold">{activeIcon}</h2>
             </header>
-            <section className="border-b brdr flex items-center justify-center basis-52 shrink-0">
+            <section className="border-b brdr flex items-center justify-center basis-40 shrink-0">
                 <Cryptocon icon={activeIcon} size={100} />
             </section>
             <CodeTabs />

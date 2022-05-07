@@ -2,7 +2,7 @@ import { Prism } from 'react-syntax-highlighter'
 import theme from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula'
 
 type Props = {
-    children: string
+    code: string
 }
 
 const CodeRender = (props: Props) => (
@@ -18,7 +18,7 @@ const CodeRender = (props: Props) => (
             height: '100%',
         }}
     >
-        {props.children}
+        {props.code}
     </Prism>
 )
 
