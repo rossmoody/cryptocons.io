@@ -18,7 +18,7 @@ const Logo = () => (
         <div className="hidden lg:block text-xs ">
             <span className="font-medium">👋 Want to help? </span>
             <a
-                href="https://github.com/rossmoody/cryptocons"
+                href="https://github.com/rossmoody/cryptocons#contributing"
                 className="text-indigo-500 dark:text-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-500"
             >
                 Submit an icon
