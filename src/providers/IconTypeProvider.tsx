@@ -9,7 +9,7 @@ type IconTypeContextProps = {
 const IconTypeContext = React.createContext({} as IconTypeContextProps)
 
 export const IconTypeProvider = ({ children }: Children) => {
-    const [iconType, setIconType] = React.useState<IconType>('all')
+    const [iconType, setIconType] = React.useState<IconType>('badge')
 
     const memo = React.useMemo(
         () => ({
